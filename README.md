@@ -1,2 +1,4 @@
 # csv_split
-Split csv based on column value
+Split csv files based on column value.
+
+In this example, the column that is used is 'Status'
