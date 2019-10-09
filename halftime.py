@@ -2,7 +2,7 @@ import csv
 import os
 
 
-def csv_split(f):
+def csv_split(f, col_name):
 
     if not os.path.exists(f[:-4]):
         os.mkdir(f[:-4])
@@ -12,7 +12,7 @@ def csv_split(f):
         # Category -> open file lookup
         outputs = {}
         for row in csvin:
-            cat = row['Status']
+            cat = row[col_name]
             # Open a new file and write the header
             if cat not in outputs:
                 fout = open('{}/{}.csv'.format(f[:-4], cat), 'w', newline='', encoding='utf-8')
@@ -37,6 +37,4 @@ for (dirpath, dirnames, filenames) in os.walk(cwd):
 
 for file in folder:
     if ".csv" in file[-4:]:
-        csv_split(file)
-
-#add extra line
+        csv_split(file, col_name='Satus')
