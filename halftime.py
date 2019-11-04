@@ -25,6 +25,7 @@ def csv_split(f, col_name):
         csvin = csv.DictReader(fin)
         # Category -> open file lookup
         outputs = {}
+        # If Program is run twice, this seed needs to be fixed
         i = 10000
         for row in csvin:
             cat = row[col_name]
