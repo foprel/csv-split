@@ -25,18 +25,16 @@ def csv_split(f, col_name):
         csvin = csv.DictReader(fin)
         # Category -> open file lookup
         outputs = {}
-        # If Program is run twice, this seed needs to be fixed
-        i = 10000
         for row in csvin:
             cat = row[col_name]
             email_address = row['Email Address']
             sfdc_id = row['Marketo SFDC ID']
+            mkto_id = row['Id']
             
             # Fill empty email addresses
             if email_address == '':
                 if sfdc_id == '':
-                    row['Email Address'] = 'marketo{}'.format(i) + '@deloitte.nl.invalid'
-                    i += 1
+                    row['Email Address'] = 'marketo{}'.format(mkto_id) + '@deloitte.nl.invalid'
                 else:
                     row['Email Address'] = sfdc_id + '@deloitte.nl.invalid'
 
