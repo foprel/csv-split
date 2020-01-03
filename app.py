@@ -3,6 +3,10 @@ import os
 
 # Ik ben siebren
 
+# Ik ben Siiebren
+
+# Siiebren is mijn naam
+
 def csv_split(f, col_name):
 
     if not os.path.exists(f[:-4]):
