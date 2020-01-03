@@ -1,6 +1,7 @@
 import csv
 import os
 
+# Ik ben siebren
 
 def csv_split(f, col_name):
 
