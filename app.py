@@ -37,4 +37,4 @@ for (dirpath, dirnames, filenames) in os.walk(cwd):
 
 for file in folder:
     if ".csv" in file[-4:]:
-        csv_split(file, col_name='Satus')
+        csv_split(file, col_name='Status')
